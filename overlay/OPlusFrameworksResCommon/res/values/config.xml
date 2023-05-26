@@ -191,4 +191,7 @@
      <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
     <string name="config_oemFastChargerStatusPath" translatable="false">"/sys/class/oplus_chg/battery/fast_charge"</string>
 
+    <!-- Mock Oplus LinearmotorVibratorService -->
+    <bool name="config_mockOplusLinearmotorVibratorService">true</bool>
+
 </resources>
