@@ -8,7 +8,7 @@ BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
-COMMON_PATH := device/oneplus/sm8550-common
+COMMON_PATH := device/oneplus/sm7550-common
 
 # A/B
 AB_OTA_UPDATER := true
@@ -65,7 +65,7 @@ BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := kalama
+TARGET_BOOTLOADER_BOARD_NAME := crow
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
@@ -125,14 +125,14 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image
 
 TARGET_KERNEL_CLANG_VERSION := r487747c
-TARGET_KERNEL_SOURCE := kernel/oneplus/sm8550
+TARGET_KERNEL_SOURCE := kernel/oneplus/sm7550
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/kalama_GKI.config \
     vendor/oplus/kalama_GKI.config \
     vendor/debugfs.config
 
-TARGET_KERNEL_EXT_MODULE_ROOT := kernel/oneplus/sm8550-modules
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/oneplus/sm7550-modules
 TARGET_KERNEL_EXT_MODULES := \
 	qcom/opensource/mmrm-driver \
 	qcom/opensource/mm-drivers/hw_fence \
@@ -155,16 +155,15 @@ TARGET_KERNEL_EXT_MODULES := \
 	qcom/opensource/video-driver \
 	qcom/opensource/graphics-kernel \
 	qcom/opensource/wlan/platform \
-	qcom/opensource/wlan/qcacld-3.0/.kiwi_v2 \
-	qcom/opensource/bt-kernel \
-	nxp/opensource/driver
+	qcom/opensource/wlan/qcacld-3.0/.qca6750 \
+	qcom/opensource/bt-kernel
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := kalama
+TARGET_BOARD_PLATFORM := crow
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -282,4 +281,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
-include vendor/oneplus/sm8550-common/BoardConfigVendor.mk
+include vendor/oneplus/sm7550-common/BoardConfigVendor.mk

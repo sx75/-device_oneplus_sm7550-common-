@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter salami aston,$(TARGET_DEVICE)),)
+ifneq ($(filter benz,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
@@ -132,10 +132,10 @@ $(WFD_SERVICE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 WIFI_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/
 $(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating wifi firmware symlinks: $@"
-	@mkdir -p $@/wlan/qca_cld/kiwi_v2
+	@mkdir -p $@/wlan/qca_cld/qca6750
 	$(hide) ln -sf /data/vendor/firmware/wlanmdsp.mbn $@/wlanmdsp.otaupdate
-	$(hide) ln -sf /mnt/vendor/persist/kiwi_v2/wlan_mac.bin $@/wlan/qca_cld/kiwi_v2/wlan_mac.bin
-	$(hide) ln -sf /odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/wlan/qca_cld/kiwi_v2/WCNSS_qcom_cfg.ini
+	$(hide) ln -sf /mnt/vendor/persist/qca6750/wlan_mac.bin $@/wlan/qca_cld/qca6750/wlan_mac.bin
+	$(hide) ln -sf /odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS) $(EGL_LIB_SYMLINKS) $(EGL_LIB64_SYMLINKS) $(IMS_SYMLINKS) $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_CDSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS) $(RFS_MSM_WPSS_SYMLINKS) $(WFD_SERVICE_SYMLINKS) $(WIFI_FIRMWARE_SYMLINKS)
 endif
